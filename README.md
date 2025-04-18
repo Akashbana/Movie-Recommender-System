@@ -19,3 +19,8 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 3. Occupation: Most users belong to occupations ***4, 0, and 7***, each around 11–13%
 4. Rating: Around ***80%*** of users given rating ***>= 3***
 
+# Data Pre-Processing
+
+1. No missing values in the data
+2. Time based features are extracted
+
