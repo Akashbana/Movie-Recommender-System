@@ -12,3 +12,10 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 6. Occupation: Numeric codes (0–20); further decoding needed
 7. Timestamp: Ratings span from ***Apr 2000 to Feb 2003*** — nearly ***3 years*** of data
 
+**Uni-variate Analysis:**
+
+1. Gender: ***72% Male***, 28% Female
+2. Age: Majority (~35%) are aged ***25***
+3. Occupation: Most users belong to occupations ***4, 0, and 7***, each around 11–13%
+4. Rating: Around ***80%*** of users given rating ***>= 3***
+
