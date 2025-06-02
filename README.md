@@ -52,5 +52,32 @@ Aim is to build:
 
 # Model Building
 
+### Collaborative Filtering
 
+* Collaborative Filtering is a recommendation technique that suggests items to a user based on the preferences of similar users (user-based) or similar items (item-based)
+* It relies on user-item interaction data (like ratings or clicks) without requiring item content. This approach helps uncover hidden patterns and personalized recommendations even for diverse item types
 
+***User-Item Matrix:***
+
+Each row represents a user and each column represents an item. The values are known interactions (e.g., ratings), and the goal is to predict ***missing values***
+
+      # user-item matrix
+      
+      user_item_matrix = df.pivot_table(index = 'UserID', columns = 'Movie_id', values = 'Rating') # user interactions
+      user_item_matrix
+
+***User-User Similarity Matrix:***
+
+It is a square matrix where each cell (u,v) contains the similarity score between users u & v, based on their interactions (e.g., ratings or clicks) across items
+
+<img src="Pictures/data.png" alt="Data" width="1000"/> 
+
+      # Cosine similarity - computes similarity between rows
+      
+      from sklearn.metrics.pairwise import cosine_similarity 
+      
+      user_similarity = cosine_similarity(user_item_matrix.fillna(0))  # user-user similarity
+      user_similarity_df = pd.DataFrame(user_similarity, index = user_item_matrix.index, columns = user_item_matrix.index)
+      user_similarity_df
+
+<img src="Pictures/data.png" alt="Data" width="1000"/> 
