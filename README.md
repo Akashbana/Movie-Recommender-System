@@ -19,9 +19,9 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 
 **Uni-variate Analysis:**
 
-<img src="Pictures/info.png" alt="Data" width="400"/>
+<img src="Pictures/eda1.png" alt="Data" width="1000"/>
 
-<img src="Pictures/info.png" alt="Data" width="400"/>
+<img src="Pictures/eda2.png" alt="Data" width="1000"/>
 
 1. Gender: ***72% Male***, 28% Female
 2. Age: Majority (~35%) are aged ***25***
@@ -30,6 +30,18 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 
 # Data Pre-Processing
 
-1. No missing values in the data
-2. Time based features are extracted
+***Missing Values:***
+
+<img src="Pictures/info.png" alt="Data" width="400"/> 
+
+* No missing values in the data
+
+***Extracting Time Based Features:***
+
+      df['year'] = df['Timestamp'].dt.year
+      df['month'] = df['Timestamp'].dt.month
+      df['day'] = df['Timestamp'].dt.day
+      df['day_of_week'] = df['Timestamp'].dt.day_name()
+
+<img src="Pictures/info.png" alt="Data" width="400"/> 
 
