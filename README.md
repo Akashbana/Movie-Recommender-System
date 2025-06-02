@@ -86,7 +86,7 @@ It is a square matrix where each cell (u,v) contains the similarity score betwee
 
 User-Based Collaborative Filtering recommends items by finding users with similar behavior and using their ratings to predict unknown ones
 
-<img src="Pictures/user user matrix.png" alt="Data" width="500"/> 
+<img src="Pictures/user based cf formula.png" alt="Data" width="700"/> 
 
       #Ratings
       predicted_ratings = user_item_matrix.copy() # Empty DataFrame to store predicted ratings
@@ -119,7 +119,7 @@ User-Based Collaborative Filtering recommends items by finding users with simila
 
 It is a square matrix where each cell (i,j) represents the similarity between items j, calculated using user ratings across those items
 
-<img src="Pictures/user user matrix.png" alt="Data" width="500"/>
+<img src="Pictures/item item matrix formula.png" alt="Data" width="700"/>
 
    #item-item similarity matrix
    item_similarity = cosine_similarity(user_item_matrix.T.fillna(0))  # computes similarity between rows i.e. user ids
@@ -131,7 +131,7 @@ It is a square matrix where each cell (i,j) represents the similarity between it
 * Item-Based Collaborative Filtering recommends items by finding similar items a user has already interacted with
 * It assumes that if a user liked one item, they'll likely enjoy similar ones
 
-<img src="Pictures/user user matrix.png" alt="Data" width="500"/>
+<img src="Pictures/item based cf formula.png" alt="Data" width="700"/>
 
       
       # Ratings
@@ -149,3 +149,6 @@ It is a square matrix where each cell (i,j) represents the similarity between it
           predicted_ratings_item_based.loc[user, movies_watched] = np.NaN
       
       predicted_ratings_item_based
+
+### Matrix Factorization
+
