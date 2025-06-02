@@ -52,7 +52,7 @@ Aim is to build:
 
 # Model Building
 
-### Collaborative Filtering
+## Collaborative Filtering
 
 * Collaborative Filtering is a recommendation technique that suggests items to a user based on the preferences of similar users (user-based) or similar items (item-based)
 * It relies on user-item interaction data (like ratings or clicks) without requiring item content. This approach helps uncover hidden patterns and personalized recommendations even for diverse item types
@@ -150,5 +150,5 @@ It is a square matrix where each cell (i,j) represents the similarity between it
       
       predicted_ratings_item_based
 
-### Matrix Factorization
+## Matrix Factorization
 
