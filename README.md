@@ -1,6 +1,9 @@
 # Problem Statement
 
-Aim is to build a ***personalized movie recommender system*** that predicts user preferences using ***user ratings, demographics, and movie details.*** The system should accurately suggest movies to users, enhancing ***user engagement***, increasing satisfaction, and creating a more intuitive movie-watching experience
+Aim is to build:
+
+1. a ***personalized movie recommender system*** that predicts user preferences using ***user ratings, demographics, and movie details***
+2. The system should accurately suggest movies to users, enhancing ***user engagement***, increasing satisfaction, and creating a more intuitive movie-watching experience
 
 # EDA
 
@@ -23,10 +26,12 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 
 <img src="Pictures/eda2.png" alt="Data" width="1000"/>
 
-1. Gender: ***72% Male***, 28% Female
-2. Age: Majority (~35%) are aged ***25***
-3. Occupation: Most users belong to occupations ***4, 0, and 7***, each around 11–13%
-4. Rating: Around ***80%*** of users given rating ***>= 3***
+1. No. of Genres - 301
+2. No. of unique locations ( zipcodes ) - 3439
+3. Gender: ***72% Male***, 28% Female
+4. Age: Majority (~35%) are aged ***25***
+5. Occupation: Most users belong to occupations ***4, 0, and 7***, each around 11–13%
+6. Rating: Around ***80%*** of users given rating ***>= 3***
 
 # Data Pre-Processing
 
