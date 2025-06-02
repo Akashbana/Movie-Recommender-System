@@ -4,6 +4,11 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 
 # EDA
 
+
+
+* Some of the columns like user id, age, ratings, etc have been assigned ***'object'*** data type which is wrong. Therefore, will be changed to ***'int'***
+* Timestamp is in ***unix*** form which will be converted to ***date_time***
+
 1. Rows: ***10,00,209*** ratings
 2. Users: ***6,040 (UserID from 1 to 6040)***
 3. Movies: ***~3952 unique Movie_ids***
