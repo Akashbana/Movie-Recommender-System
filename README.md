@@ -121,10 +121,10 @@ It is a square matrix where each cell (i,j) represents the similarity between it
 
 <img src="Pictures/item item matrix formula.png" alt="Data" width="700"/>
 
-   #item-item similarity matrix
-   item_similarity = cosine_similarity(user_item_matrix.T.fillna(0))  # computes similarity between rows i.e. user ids
-   item_similarity_df = pd.DataFrame(item_similarity, index = user_item_matrix.columns, columns = user_item_matrix.columns)
-   item_similarity_df
+      #item-item similarity matrix
+      item_similarity = cosine_similarity(user_item_matrix.T.fillna(0))  # computes similarity between rows i.e. user ids
+      item_similarity_df = pd.DataFrame(item_similarity, index = user_item_matrix.columns, columns = user_item_matrix.columns)
+      item_similarity_df
 
 ***Item Based CF:***
 
