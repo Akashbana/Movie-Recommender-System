@@ -19,9 +19,9 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 
 **Uni-variate Analysis:**
 
-<img src="Pictures/info.png" alt="Data" width="400"/>
+<img src="Pictures/eda1.png" alt="Data" width="1000"/>
 
-<img src="Pictures/info.png" alt="Data" width="400"/>
+<img src="Pictures/eda2.png" alt="Data" width="1000"/>
 
 1. Gender: ***72% Male***, 28% Female
 2. Age: Majority (~35%) are aged ***25***
