@@ -70,7 +70,7 @@ Each row represents a user and each column represents an item. The values are kn
 
 It is a square matrix where each cell (u,v) contains the similarity score between users u & v, based on their interactions (e.g., ratings or clicks) across items
 
-<img src="Pictures/data.png" alt="Data" width="1000"/> 
+<img src="Pictures/user user matrix formula.png" alt="Data" width="700"/> 
 
       # Cosine similarity - computes similarity between rows
       
@@ -80,4 +80,72 @@ It is a square matrix where each cell (u,v) contains the similarity score betwee
       user_similarity_df = pd.DataFrame(user_similarity, index = user_item_matrix.index, columns = user_item_matrix.index)
       user_similarity_df
 
-<img src="Pictures/data.png" alt="Data" width="1000"/> 
+<img src="Pictures/user user matrix.png" alt="Data" width="700"/> 
+
+***User Based CF:***
+
+User-Based Collaborative Filtering recommends items by finding users with similar behavior and using their ratings to predict unknown ones
+
+<img src="Pictures/user user matrix.png" alt="Data" width="500"/> 
+
+      #Ratings
+      predicted_ratings = user_item_matrix.copy() # Empty DataFrame to store predicted ratings
+      # Loop over every user and every movie
+      for user in user_item_matrix.index:
+          for movie in user_item_matrix.columns:
+              if pd.isna(user_item_matrix.loc[user, movie]):
+                  rated_by_users = user_item_matrix[movie].dropna().index  # users who have rated this movie
+      
+                  sim_scores = user_similarity_df.loc[user, rated_by_users]  # All users considered who have rated 
+                  ratings = user_item_matrix.loc[rated_by_users, movie]  # rating by each user
+                  
+                  numerator = np.dot(sim_scores, ratings)  # similarity btw users x ratings by those users
+                  denominator = sim_scores.abs().sum()
+                  
+                  if denominator != 0:
+                      predicted_ratings.loc[user, movie] = numerator / denominator
+                  else:
+                      predicted_ratings.loc[user, movie] = np.nan
+      
+          rated_movies = user_item_matrix.loc[user].dropna().index
+          predicted_ratings.loc[i, rated_movies] = np.NaN
+      
+      predicted_ratings
+
+1. CF is taking a lot of time to compute ratings ---> ***O(n2)***
+2. Instead, select ***top K users*** for ratings computation (dot product) ---> ***O(k x n)***
+
+***Item-Item Similarity Matrix:***
+
+It is a square matrix where each cell (i,j) represents the similarity between items j, calculated using user ratings across those items
+
+<img src="Pictures/user user matrix.png" alt="Data" width="500"/>
+
+   #item-item similarity matrix
+   item_similarity = cosine_similarity(user_item_matrix.T.fillna(0))  # computes similarity between rows i.e. user ids
+   item_similarity_df = pd.DataFrame(item_similarity, index = user_item_matrix.columns, columns = user_item_matrix.columns)
+   item_similarity_df
+
+***Item Based CF:***
+
+* Item-Based Collaborative Filtering recommends items by finding similar items a user has already interacted with
+* It assumes that if a user liked one item, they'll likely enjoy similar ones
+
+<img src="Pictures/user user matrix.png" alt="Data" width="500"/>
+
+      
+      # Ratings
+      predicted_ratings_item_based = user_item_matrix.copy() # Empty DataFrame to store predicted ratings
+      
+      for user in user_item_matrix.index:
+          movies_watched = user_item_matrix.loc[user].dropna().index
+          for movie in user_item_matrix.columns:
+              if movie not in movies_watched:
+                  rated_movies = user_item_matrix.loc[user, movies_watched]
+                  similarities = item_similarity_df.loc[movie, movies_watched]
+                  ratings = np.dot(rated_movies, similarities) / np.sum(similarities)  # computing ratings for (user, movie)
+                  predicted_ratings_item_based.loc[user, movie] =  ratings  # updating ratings in the matrix
+      
+          predicted_ratings_item_based.loc[user, movies_watched] = np.NaN
+      
+      predicted_ratings_item_based
