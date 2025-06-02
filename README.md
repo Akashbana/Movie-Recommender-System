@@ -32,7 +32,7 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 
 ***Missing Values:***
 
-<img src="Pictures/info.png" alt="Data" width="400"/> 
+<img src="Pictures/missing values.png" alt="Data" width="400"/> 
 
 * No missing values in the data
 
@@ -43,5 +43,9 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
       df['day'] = df['Timestamp'].dt.day
       df['day_of_week'] = df['Timestamp'].dt.day_name()
 
-<img src="Pictures/info.png" alt="Data" width="400"/> 
+<img src="Pictures/data.png" alt="Data" width="1000"/> 
+
+# Model Building
+
+
 
