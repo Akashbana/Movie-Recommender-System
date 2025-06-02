@@ -4,7 +4,7 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 
 # EDA
 
-<img src="Pictures/data.png" alt="Data" width="800"/> 
+<img src="Pictures/info.png" alt="Data" width="400"/> 
 
 * Some of the columns like user id, age, ratings, etc have been assigned ***'object'*** data type which is wrong. Therefore, will be changed to ***'int'***
 * Timestamp is in ***unix*** form which will be converted to ***date_time***
@@ -18,6 +18,10 @@ Aim is to build a ***personalized movie recommender system*** that predicts user
 7. Timestamp: Ratings span from ***Apr 2000 to Feb 2003*** — nearly ***3 years*** of data
 
 **Uni-variate Analysis:**
+
+<img src="Pictures/info.png" alt="Data" width="400"/>
+
+<img src="Pictures/info.png" alt="Data" width="400"/>
 
 1. Gender: ***72% Male***, 28% Female
 2. Age: Majority (~35%) are aged ***25***
