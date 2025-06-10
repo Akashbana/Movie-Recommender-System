@@ -152,3 +152,4 @@ It is a square matrix where each cell (i,j) represents the similarity between it
 
 ## Matrix Factorization
 
+<img src="Pictures/data.png" alt="Data" width="1000"/>
