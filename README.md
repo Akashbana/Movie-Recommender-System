@@ -1,5 +1,7 @@
 # Problem Statement
 
+<img src="Pictures/info.png" alt="Data" width="400"/> 
+
 Aim is to build:
 
 1. a ***personalized movie recommender system*** that predicts user preferences using ***user ratings, demographics, and movie details***
